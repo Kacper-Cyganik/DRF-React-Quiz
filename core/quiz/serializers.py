@@ -13,6 +13,13 @@ class QuizSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Quiz
+        fields = ['title']
+
+
+class RandomQuestionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Question
         fields = '__all__'
 
 

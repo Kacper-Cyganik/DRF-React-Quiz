@@ -3,10 +3,12 @@ from django.db import models
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
-
     def __str__(self) -> str:
         return self.name
-
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+        ordering = ['id']
 
 class Quiz(models.Model):
     category = models.ForeignKey(
@@ -69,9 +71,9 @@ class Question(Updated):
 
 
 class Answer(Updated):
-
     question = models.ForeignKey(
         Question, related_name='answers', on_delete=models.CASCADE)
+    answer_text = models.CharField(max_length=255, null=True, verbose_name="Answer Text")
     is_right = models.BooleanField(default=False)
 
     class Meta:
