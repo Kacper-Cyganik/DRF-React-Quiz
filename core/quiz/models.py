@@ -81,3 +81,5 @@ class Answer(Updated):
         verbose_name_plural = 'Answers'
         ordering = ['id']
     
+    def __str__(self) -> str:
+        return self.answer_text

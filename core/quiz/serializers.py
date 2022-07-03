@@ -16,22 +16,25 @@ class QuizSerializer(serializers.ModelSerializer):
         fields = ['title']
 
 
-class RandomQuestionSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Question
-        fields = '__all__'
-
-
-class QuestionSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Question
-        fields = '__all__'
-
-
 class AnswerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Answer
-        fields = '__all__'
+        fields = [
+            'id',
+            'answer_text',
+            'is_right',
+        ]
+
+class QuestionSerializer(serializers.ModelSerializer):
+
+    answers = AnswerSerializer(many=True, read_only=True)
+    quiz = QuizSerializer(many=False, read_only=True)
+    class Meta:
+        model = Question
+        fields = [
+            'quiz',
+            'title',
+            'answers',
+        ]
+
