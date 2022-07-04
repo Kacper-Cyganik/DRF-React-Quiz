@@ -1,7 +1,7 @@
 # DRF-React-Quiz
 
 #  About
-### Quiz game made with Django Rest Framework & React. User can attempt to answer questions correctly about a certain or variety of subjects.
+Quiz game made with Django Rest Framework & React. User can attempt to answer questions correctly about a certain or variety of subjects.
 
 <p align="center">
 <img src="images/select_quiz.png" width="400" height="400">
