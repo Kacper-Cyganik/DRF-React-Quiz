@@ -1,14 +1,6 @@
 from rest_framework import serializers
 from .models import Category, Quiz, Question, Answer
 
-
-class CategorySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Category
-        fields = '__all__'
-
-
 class QuizSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -29,11 +21,9 @@ class AnswerSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
 
     answers = AnswerSerializer(many=True, read_only=True)
-    quiz = QuizSerializer(many=False, read_only=True)
     class Meta:
         model = Question
         fields = [
-            'quiz',
             'title',
             'answers',
         ]
