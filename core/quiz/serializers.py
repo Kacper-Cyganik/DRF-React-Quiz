@@ -2,10 +2,11 @@ from rest_framework import serializers
 from .models import Category, Quiz, Question, Answer
 
 class QuizSerializer(serializers.ModelSerializer):
-
+    
+    category = serializers.ReadOnlyField(source='category.name')
     class Meta:
         model = Quiz
-        fields = ['title']
+        fields = ['title', 'category']
 
 
 class AnswerSerializer(serializers.ModelSerializer):
