@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./framework/Header"
-import ConnectApi from "../api/ConnectApi"
+import Header from "./framework/Header";
+import ConnectApi from "../api/ConnectApi";
 
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
@@ -65,7 +65,7 @@ export const QuizSelect = () => {
           color="textPrimary"
           gutterBottom
         >
-          Quizzes
+          QuizGame
         </Typography>
         <Typography
           variant="h5"
@@ -73,9 +73,13 @@ export const QuizSelect = () => {
           color="textSecondary"
           component="p"
         >
-          We've got all the quizzes you love to binge! The world's largest
-          selection of quizzes. Choose from 1+ quizzes with new additions
-          published every month
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum."
         </Typography>
       </Container>
       <Container maxWidth="md" component="main">
@@ -101,7 +105,7 @@ export const QuizSelect = () => {
                       variant="subtitle1"
                       align="center"
                     >
-                      50 questions
+                      Category: {q.category}
                     </Typography>
                   </ul>
                 </CardContent>
