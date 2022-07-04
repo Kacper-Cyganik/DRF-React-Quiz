@@ -1,4 +1,5 @@
 import Header from "./framework/Header"
+import Footer from "./framework/Footer"
 import ConnectApi from "../api/ConnectApi"
 
 export const QuizSelect = () => {
@@ -7,7 +8,10 @@ export const QuizSelect = () => {
     const [dataState] = ConnectApi(API_URL)
     console.log(dataState);
     return(
-        <div><Header/></div>
+        <div>
+            <Header/>
+            <Footer/>
+        </div>
     )
 }
 
